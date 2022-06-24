@@ -36,10 +36,7 @@ export default function Inicial ( ) {
         </button>
         <table >
                 <thead>
-                    <tr>
-
-                        <th>NOME</th>
-                    </tr>
+                    
                 </thead>
                 <tbody>
                     {Anime.map(item => 
