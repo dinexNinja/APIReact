@@ -26,7 +26,12 @@ export default function Inicial ( ) {
       <div> Animes </div>
       <input onChange={e => setAnime(e.target.value)}></input> <button onClick={NovoAnime}> Postar</button>
 
-      <div> <button onClick={ListarAnimes}>Ver Todos</button></div>
+      <div> <button onClick={ListarAnimes}>
+        Ver Todos
+        </button></div>
+    <div>
+    </div>
+        
     </div>
   );
 }
