@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useState, useEffect} from "react";
 import { Listar, Novo} from "./sla.js"
 import "./App.scss"
 
@@ -6,11 +6,16 @@ export default function Inicial ( ) {
 
     const [Anime, setAnime] = useState("")
 
-    async function ListarAnimes() {
-      const resp = await Listar()
-      setAnime(resp)
+    
+      async function ListarAnimes() {
+          const resposta = await Listar() 
+          setAnime(resposta);
+      
+  
+      useEffect(() => {
+          Listar();
+      }, [])
     }
-
     async function NovoAnime() {
       if(!Anime.trim()){
           alert('Digite um texto valido!');
@@ -28,7 +33,25 @@ export default function Inicial ( ) {
 
       <div> <button onClick={ListarAnimes}>
         Ver Todos
-        </button></div>
+        </button>
+        <table className='ta'>
+                <thead>
+                    <tr>
+
+                        <th>NOME</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {Anime.map(item => 
+
+                            <tr>
+                                <td> {item.nm_anime} </td>
+                            </tr>
+                        )
+                    }
+                </tbody>
+            </table>
+        </div>
     <div>
     </div>
         
