@@ -34,7 +34,7 @@ export default function Inicial ( ) {
       <div> <button onClick={ListarAnimes}>
         Ver Todos
         </button>
-        <table className='ta'>
+        <table >
                 <thead>
                     <tr>
 
